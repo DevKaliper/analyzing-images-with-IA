@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import analyzeImage from './controllers/azure-image-analysis';
 
-const DisplayResults =  ({result}) => {
-  const datos = [JSON.stringify(result)]
+const DisplayResults =  (result,url) => {
+  const datos = [JSON.stringify({"URL":url, ...result})]
   return(
     <div>
       {datos.map((dato, index) => (
@@ -56,7 +56,7 @@ function App() {
 
     {loading && <p>Loading...</p>}
     {!loading && result &&  
-    <DisplayResults result={result} />}
+    DisplayResults(result,url)}
 
 
     
