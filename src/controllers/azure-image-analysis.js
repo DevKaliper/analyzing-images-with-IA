@@ -7,7 +7,7 @@ const analyzeImage = async (img) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Ocp-Apim-Subscription-Key": import.meta.env.KEY,
+        "Ocp-Apim-Subscription-Key": import.meta.env.VITE_KEY,
       },
   
       body: JSON.stringify({ url: img }), // body data type must match "Content-Type" header
