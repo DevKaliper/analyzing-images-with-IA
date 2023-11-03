@@ -12,6 +12,7 @@ const analyzeImage = async (img) => {
   
       body: JSON.stringify({ url: img }), // body data type must match "Content-Type" header
     });
+    //PROBANDO
   
     const response = await data.json();
     console.log(response);
