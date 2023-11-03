@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import analyzeImage from './controllers/azure-image-analysis';
 function App() {
   const [url, setUrl] = useState('');
 
@@ -6,8 +7,9 @@ function App() {
     setUrl(e.target.value)
   }
 
-  const handleAnalyze = () => {
-    console.log("Analyze")
+  const handleAnalyze = async() => {
+    const result = await analyzeImage(url);
+    console.log(result)
   }
 
   const handleGenerate = () => {
